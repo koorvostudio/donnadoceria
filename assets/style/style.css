@@ -9,11 +9,20 @@
     --font-sans: 'Montserrat', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-pink) var(--color-soft-pink-footer);
+}
+
 /* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM (SCROLLBAR) --- */
 
 ::selection {
-    background-color: var(--color-gold-secondary);
+    background-color: var(--color-soft-pink-footer);
 }
+
 
 /* Para Chrome, Safari e Edge */
 ::-webkit-scrollbar {
@@ -28,7 +37,7 @@
 
 /* O "pegador" da barra (a parte que desce) */
 ::-webkit-scrollbar-thumb {
-    background: #e0e0e0;
+    background: var(--color-pink);
     /* Um cinza bem clarinho */
     border-radius: 10px;
     transition: 0.3s;
@@ -40,13 +49,7 @@
     /* Ela ganha o toque dourado da marca */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scrollbar-width: thin;
-    scrollbar-color: #e0e0e0 #fff;
-}
+
 
 html {
     scroll-behavior: smooth;
@@ -56,6 +59,26 @@ body {
     font-family: var(--font-sans);
     color: var(--color-dark);
     line-height: 1.6;
+}
+
+.button {
+    display: inline-flex;
+    border-radius: 8px;
+    background: var(--color-dark);
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 40px;
+    cursor: pointer;
+    border-color: transparent;
+    /* Quadrado é mais moderno/luxo */
+    transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background: var(--color-pink);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2);
 }
 
 .container {
@@ -297,6 +320,10 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+}
+
+.reveal-4 {
+    margin-bottom: 40px;
 }
 
 /* Keyframes da animação */
@@ -858,6 +885,10 @@ body {
     color: #666;
     max-width: 500px;
     margin: 0 auto 40px;
+}
+
+.cta-content i {
+    color: var(--color-pink);
 }
 
 
