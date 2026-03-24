@@ -1,12 +1,19 @@
 :root {
-    --gold: #c5a059;
-    --dark: #1a1a1a;
-    --soft-pink: #fff5f7;
+    --color-gold: #c5a059;
+    --color-gold-secondary: #ffe7ba;
+    --color-dark: #1a1a1a;
+    --color-soft-pink: #fff5f7;
+    --color-soft-pink-footer: #ffe3e8;
+    --color-pink: #d1516d;
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Montserrat', sans-serif;
 }
 
 /* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM (SCROLLBAR) --- */
+
+::selection {
+    background-color: var(--color-gold-secondary);
+}
 
 /* Para Chrome, Safari e Edge */
 ::-webkit-scrollbar {
@@ -29,7 +36,7 @@
 
 /* Quando o usuário passa o mouse na barra */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--gold);
+    background: var(--color-gold);
     /* Ela ganha o toque dourado da marca */
 }
 
@@ -47,7 +54,7 @@ html {
 
 body {
     font-family: var(--font-sans);
-    color: var(--dark);
+    color: var(--color-dark);
     line-height: 1.6;
 }
 
@@ -73,13 +80,40 @@ body {
     align-items: center;
 }
 
-.brand {
-    height: 35px;
+.brand .logo-wrapper {
+    position: relative;
+    display: block;
+    width: 180px; /* Ajuste conforme o tamanho real da sua logo */
+    height: 60px; /* Ajuste conforme o tamanho real da sua logo */
 }
 
 .brand img {
-    height: 100%;
-    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /* Garante centralização vertical perfeita */
+    width: 100%;
+    height: auto;
+    transition: all 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+
+.logo-default {
+    opacity: 1;
+    z-index: 2;
+}
+
+.logo-hover {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* --- EFEITO AO PASSAR O MOUSE --- */
+.logo-wrapper:hover .logo-default {
+    opacity: 0;
+}
+
+.logo-wrapper:hover .logo-hover {
+    opacity: 1;
 }
 
 .menu-desktop {
@@ -101,7 +135,7 @@ body {
 .menu-toggle span {
     width: 25px;
     height: 1px;
-    background: var(--dark);
+    background: var(--color-dark);
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -118,7 +152,7 @@ body {
     font-family: var(--font-serif);
     font-size: 24px;
     font-style: italic;
-    color: var(--dark);
+    color: var(--color-dark);
     text-decoration: none;
     letter-spacing: 1px;
 }
@@ -137,13 +171,35 @@ body {
     /* Centraliza verticalmente */
 
     text-align: center;
-    background-color: var(--soft-pink);
+    background-color: var(--color-soft-pink);
     position: relative;
     overflow: hidden;
 
     /* Reset total de espaçamentos */
     padding: 0;
     margin: 0;
+}
+
+.background-pattern>* {
+    position: relative;
+    z-index: 1;
+}
+
+.background-pattern::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/images/flowers.svg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: 0;
+    mix-blend-mode: color-burn;
+
+
 }
 
 .hero-content {
@@ -160,6 +216,10 @@ body {
        Se o seu header tem 80px de altura, subimos o texto em 40px 
        para que ele pareça centralizado em relação à área ÚTIL da tela. */
     margin-top: -40px;
+}
+
+.hero-content i, .hero-content span {
+    color: var(--color-pink);
 }
 
 
@@ -180,7 +240,7 @@ body {
 .scroll-line {
     width: 1px;
     height: 40px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
+    background: linear-gradient(to bottom, var(--color-gold), transparent);
     animation: scrollLine 2s infinite;
 }
 
@@ -210,7 +270,7 @@ body {
     font-family: var(--font-serif);
     font-size: 34px;
     line-height: 1.2;
-    color: var(--dark);
+    color: var(--color-dark);
     margin: 15px 0;
     width: 100%;
 }
@@ -222,7 +282,7 @@ body {
 .divider {
     width: 40px;
     height: 1px;
-    background: var(--gold);
+    background: var(--color-gold);
     margin: 10px 0;
 }
 
@@ -289,7 +349,7 @@ body {
 .hero {
     padding: 60px 0;
     text-align: center;
-    background: var(--soft-pink);
+    background: var(--color-soft-pink);
 }
 
 .hero h1 {
@@ -303,9 +363,9 @@ body {
 }
 
 .btn-luxury {
-    color: var(--dark);
+    color: var(--color-dark);
     text-decoration: none;
-    border-bottom: 1px solid var(--gold);
+    border-bottom: 1px solid var(--color-gold);
     font-weight: 600;
 }
 
@@ -355,7 +415,7 @@ body {
 
 .menu-drawer a {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--color-dark);
     font-size: 18px;
     text-transform: uppercase;
 }
@@ -377,23 +437,56 @@ body {
     /* Esconde hamburguer */
     .menu-desktop {
         display: flex;
+        align-items: center;
         list-style: none;
         gap: 40px;
     }
 
-    .menu-desktop a {
+    .menu-desktop a:not(.btn-nav) {
         text-decoration: none;
-        color: var(--dark);
+        color: var(--color-dark);
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 2px;
+        transition: all 0.2s ease;
+        display: inline-block;
+        position: relative;
+    }
+
+    .menu-desktop a:not(.btn-nav)::before {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-gold);
+        transition: all 0.2s ease;
+        transform: scale(0);
+    }
+
+    .menu-desktop a:not(.btn-nav):hover::before {
+        transform: scale(1);
     }
 
     .btn-nav {
-        border: 1px solid var(--gold);
+        border: 1px solid var(--color-gold);
         padding: 10px 20px;
-        color: var(--gold) !important;
+        font-weight: 600;
+        color: var(--color-gold) !important;
+        text-decoration: none;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.2s ease;
     }
+
+    .btn-nav:hover {
+        background-color: var(--color-gold);
+        color: #fff !important; 
+    }
+
+    
 
     .hero {
         padding: 120px 0;
@@ -459,7 +552,7 @@ body {
 
 .category-card:hover .card-image {
     border-color: rgba(197, 160, 89, 0.2);
-    /* var(--gold) com opacidade */
+    /* var(--color-gold) com opacidade */
     box-shadow: inset 0 0 20px rgba(197, 160, 89, 0.03), 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
@@ -492,7 +585,7 @@ body {
     display: block;
     font-size: 10px;
     letter-spacing: 3px;
-    color: var(--gold);
+    color: var(--color-gold);
     margin-bottom: 5px;
 }
 
@@ -513,7 +606,7 @@ body {
     }
 
     .category-card:hover {
-        border-color: var(--gold);
+        border-color: var(--color-gold);
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
     }
@@ -530,7 +623,7 @@ body {
         left: 50%;
         width: 0;
         height: 2px;
-        background: var(--gold);
+        background: var(--color-gold);
         transition: 0.4s;
         transform: translateX(-50%);
     }
@@ -565,7 +658,7 @@ body {
         font-family: var(--font-serif);
         font-size: 14px;
         font-style: italic;
-        color: var(--dark);
+        color: var(--color-dark);
         text-transform: none;
         /* Mantém a elegância da serifa italic */
         letter-spacing: 1px;
@@ -636,7 +729,7 @@ body {
 }
 
 .tab-btn.active {
-    border-color: var(--gold);
+    border-color: var(--color-gold);
     background: #fdfaf8;
 }
 
@@ -648,7 +741,7 @@ body {
 
 .tab-btn span {
     font-size: 10px;
-    color: var(--gold);
+    color: var(--color-gold);
     letter-spacing: 2px;
 }
 
@@ -660,7 +753,7 @@ body {
     top: 0;
     width: 4px;
     height: 100%;
-    background: var(--gold);
+    background: var(--color-gold);
 }
 
 .map-container {
@@ -680,7 +773,7 @@ body {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--gold);
+    color: var(--color-gold);
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
@@ -691,7 +784,7 @@ body {
 
 .action-link:hover {
     letter-spacing: 1.5px;
-    color: var(--dark);
+    color: var(--color-dark);
 }
 
 @media (min-width: 992px) {
@@ -711,7 +804,7 @@ body {
 .mantra-text {
     font-family: var(--font-serif);
     font-size: 28px;
-    color: var(--dark);
+    color: var(--color-dark);
     line-height: 1.4;
     max-width: 800px;
     margin: 0 auto;
@@ -727,7 +820,7 @@ body {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: var(--gold);
+    color: var(--color-gold);
 }
 
 @media (min-width: 992px) {
@@ -738,7 +831,7 @@ body {
 
 /* --- SEÇÃO WHATSAPP --- */
 .cta-box {
-    background: var(--soft-pink);
+    background: var(--color-soft-pink);
     /* Aquele rosa bem clarinho que usamos */
     padding: 60px 30px;
     text-align: center;
@@ -757,7 +850,7 @@ body {
     font-size: 30px;
     line-height: 1.2;
     margin: 20px 0;
-    color: var(--dark);
+    color: var(--color-dark);
 }
 
 .cta-content p {
@@ -767,15 +860,17 @@ body {
     margin: 0 auto 40px;
 }
 
+
+
 /* O BOTÃO PRECIOSO */
 .btn-whatsapp {
     display: inline-flex;
+    border-radius: 8px;
     flex-direction: column;
-    background: var(--dark);
+    background: var(--color-dark);
     color: #fff;
     text-decoration: none;
     padding: 20px 40px;
-    border-radius: 0;
     /* Quadrado é mais moderno/luxo */
     transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -796,7 +891,7 @@ body {
 }
 
 .btn-whatsapp:hover {
-    background: var(--gold);
+    background: var(--color-pink);
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2);
 }
@@ -816,7 +911,7 @@ body {
         position: absolute;
         width: 400px;
         height: 400px;
-        border: 1px solid var(--gold);
+        border: 1px solid var(--color-gold);
         opacity: 0.05;
         border-radius: 50%;
         top: -100px;
@@ -827,10 +922,11 @@ body {
 
 /* --- FOOTER BASE --- */
 .main-footer {
-    background: #fff;
+    background: var(--color-soft-pink);
     padding: 80px 0 40px;
     border-top: 1px solid var(--border);
     text-align: center;
+    position: relative;
 }
 
 .footer-grid {
@@ -859,7 +955,7 @@ body {
 
 .footer-social a {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--color-dark);
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -870,7 +966,7 @@ body {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--gold);
+    color: var(--color-gold);
     margin-bottom: 25px;
 }
 
@@ -885,13 +981,13 @@ body {
 
 .footer-nav a {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--color-dark);
     font-size: 13px;
     transition: 0.3s;
 }
 
 .footer-nav a:hover {
-    color: var(--gold);
+    color: var(--color-gold);
 }
 
 /* ASSINATURA KOORVO */
@@ -938,5 +1034,97 @@ body {
 
     .footer-credits {
         text-align: right;
+    }
+}
+
+/* --- BOTÃO WHATSAPP FLUTUANTE --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    z-index: 9999;
+    /* SEM OVERFLOW: HIDDEN AQUI */
+}
+
+.whatsapp-icon-box {
+    width: 50px; /* Aumentamos um pouco a bolha dourada */
+    height: 50px;
+    background-color: var(--color-pink);
+    color: #FFF;
+    border-radius: 50%;
+    
+    /* Centralização Total e Segura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    z-index: 2;
+    overflow: visible; /* Garante que o desenho não seja cortado por erro */
+}
+
+.whatsapp-svg {
+    width: 32px; /* Tamanho do ícone dentro da bolha */
+    height: 32px;
+    display: block; /* Essencial para centralização Flexbox */
+}
+
+.whatsapp-text {
+    background-color: var(--color-dark);
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 12px 25px;
+    border-radius: 30px 0 0 30px; /* Arredondado apenas na esquerda */
+    margin-right: -25px; /* Sobrepõe levemente para o encaixe perfeito */
+    padding-right: 40px;
+    display: none;
+    
+    /* Estado Inicial: Escondido */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: all 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+
+/* --- EFEITO HOVER --- */
+
+.whatsapp-float:hover .whatsapp-icon-box {
+    background-color: var(--color-dark); /* Muda de cor no hover */
+    color: var(--color-gold-secondary);
+    transform: scale(1.05);
+}
+
+.whatsapp-float:hover .whatsapp-text {
+    opacity: 1;
+    color: var(--color-gold-secondary);
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Ajuste Mobile: No celular o texto pode atrapalhar, 
+   então deixamos apenas o botão ou reduzimos o texto */
+@media (min-width: 992px) {
+    .whatsapp-text {
+        display: block; /* Esconde o texto em telas pequenas para não cobrir o site */
+    }
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-icon-box {
+        width: 60px; /* Tamanho do ícone dentro da bolha */
+        height: 60px;
+    }
+
+    .whatsapp-svg { 
+        width: 42px; /* Tamanho do ícone dentro da bolha */
+        height: 42px;
     }
 }

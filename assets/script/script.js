@@ -19,7 +19,7 @@ links.forEach(link => {
     link.addEventListener('click', toggleMenu);
 });
 
-
+// Página ir revelando aos poucos
 const reveals = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entries) => {
