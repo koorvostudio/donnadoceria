@@ -92,11 +92,10 @@ body {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    /* Espaço elegante entre as linhas */
+    gap: 8px; /* Espaço elegante entre as linhas */
     padding: 10px;
-    z-index: 1100;
-    /* Garante que fique acima do drawer se necessário */
+    z-index: 1100; /* Garante que fique acima do drawer se necessário */
+
 }
 
 .menu-toggle span {
@@ -841,7 +840,7 @@ body {
 }
 
 .footer-logo {
-    height: 40px;
+    height: 70px;
     margin-bottom: 20px;
 }
 
