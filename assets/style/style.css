@@ -833,12 +833,12 @@ body {
     font-size: 28px;
     color: var(--color-dark);
     line-height: 1.4;
-    max-width: 800px;
     margin: 0 auto;
 }
 
 .mantra-text i {
     font-weight: 400;
+    color: var(--color-pink);
 }
 
 .mantra-signature {
