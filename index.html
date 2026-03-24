@@ -8,90 +8,235 @@
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/assets/style/style.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="navbar">
-        <nav class="container flex-nav">
-            <div class="brand">
-                <a href="/">
-                    <img src="/assets/images/logo-donna-preto.png" alt="Donna Doceria" class="logo-img logo-black">
-                    <img src="/assets/images/logo-donna-gold.png" alt="Donna Doceria Dourada"
-                        class="logo-img logo-gold">
-                </a>
-            </div>
-            <ul class="menu">
+    <div class="menu-overlay" id="overlay"></div>
+
+    <aside class="menu-drawer" id="drawer">
+        <div class="drawer-header">
+            <span class="close-menu" id="close-btn"></span>
+        </div>
+        <nav>
+            <ul>
                 <li><a href="#experiencia">A Experiência</a></li>
                 <li><a href="#colecoes">Coleções</a></li>
                 <li><a href="#contato">Encomendas</a></li>
             </ul>
-            <div class="mobile-menu-icon">
+        </nav>
+    </aside>
+
+    <div class="menu-overlay" id="overlay"></div>
+
+    <header class="navbar">
+        <div class="container flex-nav">
+            <div class="brand">
+                <a href="/">
+                    <img src="/assets/images/logo-donna-preto.png" alt="Donna Doceria" class="logo-img">
+                </a>
+            </div>
+
+            <ul class="menu-desktop">
+                <li><a href="#experiencia">A Experiência</a></li>
+                <li><a href="#colecoes">Coleções</a></li>
+                <li><a href="#contato" class="btn-nav">Encomendas</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="open-btn">
                 <span></span>
                 <span></span>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <main>
-        <section id="experiencia" class="hero-premium">
-            <div class="hero-inner">
-                <span class="subtitle reveal">Desde 2012</span>
-                <h1 class="reveal">A arte da alta <br><i>confeitaria</i> brasiliense</h1>
-                <div class="divider reveal"></div>
-                <p class="reveal">Onde o rigor da técnica francesa encontra o afeto do sabor artesanal.</p>
-                <a href="#colecoes" class="btn-luxury reveal">Conheça nossas Coleções</a>
+    <section id="experiencia" class="hero">
+        <div class="container hero-content">
+            <span class="subtitle reveal-1">Desde 2012</span>
+            <h1 class="reveal-2">A arte da alta <br><i>confeitaria</i> brasiliense</h1>
+            <div class="divider reveal-3"></div>
+            <p class="reveal-4">Onde o rigor da técnica francesa encontra o afeto do sabor artesanal.</p>
+            <div class="hero-actions reveal-5">
+                <a href="#colecoes" class="btn-luxury">Conheça nossas Coleções</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="mantra section-padding">
-            <div class="container-small">
-                <blockquote class="reveal">"Doce como a vida deve ser."</blockquote>
+    <section id="colecoes" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal-1">
+                <span class="subtitle">Nossas Seleções</span>
+                <h2>Coleções Exclusivas</h2>
+                <div class="divider"></div>
             </div>
-        </section>
 
-        <section id="colecoes" class="section-padding">
-            <div class="container">
-                <div class="grid-luxury">
-                    <div class="category-card reveal">
-                        <div class="card-line"></div>
-                        <span>01</span>
-                        <h3>Petit Gateau & Bolos.</h3>
-                        <p>Design exclusivo para celebrações inesquecíveis.</p>
+            <div class="grid-luxury">
+                <div class="category-card reveal-2">
+                    <div class="card-image">
+                        <img src="/assets/images/produto.png" alt="Bolos Artesanais">
+                        <div class="card-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
                     </div>
-                    <div class="category-card reveal">
-                        <div class="card-line"></div>
-                        <span>02</span>
+                    <div class="card-info">
+                        <span class="card-number">01</span>
+                        <h3>Petit Gateau & Bolos</h3>
+                        <p>Design exclusivo para celebrações inesquecíveis e momentos únicos.</p>
+                    </div>
+                </div>
+
+                <div class="category-card reveal-3">
+                    <div class="card-image">
+                        <img src="/assets/images/produto.png" alt="Doces Finos">
+                        <div class="card-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-number">02</span>
                         <h3>Macarons & Doces Finos</h3>
-                        <p>Pequenas joias de açúcar e sofisticação.</p>
+                        <p>Pequenas joias de açúcar que unem sofisticação e o sabor da técnica francesa.</p>
                     </div>
-                    <div class="category-card reveal">
-                        <div class="card-line"></div>
-                        <span>03</span>
+                </div>
+
+                <div class="category-card reveal-4">
+                    <div class="card-image">
+                        <img src="/assets/images/produto.png" alt="Presentes Donna">
+                        <div class="card-overlay">
+                            <span>Ver Detalhes</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-number">03</span>
                         <h3>Presentes Donna</h3>
-                        <p>Curadoria de sabores em embalagens icônicas.</p>
+                        <p>Curadoria de sabores artesanais em embalagens icônicas para presentear.</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer id="contato" class="footer-luxury">
+    <section class="mantra-section reveal">
         <div class="container">
-            <p>DONNA DOCERIA — Todos os direitos reservados</p>
-
-            <div class="dev-by">
-                <span>Designed by</span>
-                <a href="https://koorvo.com.br" target="_blank" class="koorvo-link">
-                    <img src="/assets/images/logo-koorvo.png" alt="Koorvo Digital Agency" class="koorvo-logo">
-                </a>
+            <div class="mantra-content">
+                <p class="mantra-text">
+                    "Não entregamos apenas doces, entregamos o cenário <br>
+                    <i>perfeito</i> para as suas melhores memórias."
+                </p>
+                <span class="mantra-signature">Donna Doceria</span>
             </div>
+        </div>
+    </section>
+
+
+    <section id="localizacao" class="section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Onde nos Encontrar</span>
+                <h2>Nossas Unidades</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="location-wrapper">
+                <div class="location-tabs">
+
+                    <button class="tab-btn active" onclick="changeMap('vicente', this)">
+                        <div class="tab-content">
+                            <span>01</span>
+                            <h3>Vicente Pires</h3>
+                            <p>Rua 12, Chácara 312</p>
+                        </div>
+                        <div class="tab-actions">
+                            <span class="action-label">Ver no Mapa & Encomendar</span>
+                        </div>
+                    </button>
+
+                    <button class="tab-btn" onclick="changeMap('jk', this)">
+                        <div class="tab-content">
+                            <span>02</span>
+                            <h3>JK Shopping</h3>
+                            <p>Taguatinga Norte, Piso L1</p>
+                        </div>
+                        <div class="tab-actions">
+                            <span class="action-label">Ver no Mapa & Encomendar</span>
+                        </div>
+                    </button>
+
+                </div>
+
+                <div class="map-container">
+                    <div id="map-frame">
+                        <iframe id="google-map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.1776869280425!2d-48.0447868!3d-15.794582100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a333772ca6f65%3A0x9ab053bc39cee2d5!2sDonna%20Doceria!5e0!3m2!1spt-BR!2sbr!4v1774361958252!5m2!1spt-BR!2sbr"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section-padding reveal">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <span class="subtitle">Atendimento Personalizado</span>
+                    <h2>Transforme seu evento em uma <i>experiência</i> memorável</h2>
+                    <p>Nossos especialistas estão prontos para planejar cada detalhe do seu pedido, desde celebrações
+                        íntimas a grandes eventos.</p>
+
+                    <div class="cta-actions">
+                        <a href="https://wa.me/55619XXXXXXX" target="_blank" class="btn-whatsapp">
+                            <span class="btn-text">Iniciar Consultoria via WhatsApp</span>
+                            <span class="btn-sub">Falar com uma especialista</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cta-decoration">
+                    <div class="decorative-circle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+                <img src="assets/images/logo-donna-preto.png" alt="Donna Doceria" class="footer-logo">
+                <p>A doçura que transforma momentos em memórias inesquecíveis.</p>
+                <div class="footer-social">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#experiencia">A Experiência</a></li>
+                    <li><a href="#colecoes">Coleções</a></li>
+                    <li><a href="#localizacao">Unidades</a></li>
+                    <li><a href="#contato">Encomendas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-credits">
+                <h4>Crafted by</h4>
+                <a href="https://koorvo.com.br" target="_blank" class="koorvo-signature">
+                    <img src="assets/images/logo-koorvo.png" alt="Koorvo" class="koorvo-logo">
+                </a>
+                <p class="copyright">&copy; 2026 Donna Doceria. <br>Todos os direitos reservados.</p>
+            </div>
+
         </div>
     </footer>
 
-    <script src="/assets/js/script.js"></script>
+    <script src="/assets/script/script.js"></script>
 </body>
 
 </html>
