@@ -6,10 +6,43 @@
     --font-sans: 'Montserrat', sans-serif;
 }
 
+/* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM (SCROLLBAR) --- */
+
+/* Para Chrome, Safari e Edge */
+::-webkit-scrollbar {
+    width: 6px;
+    /* Bem fininha para não poluir */
+}
+
+/* O fundo da barra (onde ela corre) */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* O "pegador" da barra (a parte que desce) */
+::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    /* Um cinza bem clarinho */
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Quando o usuário passa o mouse na barra */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+    /* Ela ganha o toque dourado da marca */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #e0e0e0 #fff;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -93,17 +126,85 @@ body {
 
 /* --- ESTILIZAÇÃO DA HERO --- */
 .hero {
-    padding: 80px 0;
-    background-color: var(--soft-pink);
+    height: 100vh;
+    height: 100svh;
+    /* Unidade moderna para mobile */
+    /* O Segredo da Centralização */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza horizontalmente */
+    justify-content: center;
+    /* Centraliza verticalmente */
+
     text-align: center;
+    background-color: var(--soft-pink);
+    position: relative;
     overflow: hidden;
+
+    /* Reset total de espaçamentos */
+    padding: 0;
+    margin: 0;
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    z-index: 5;
+
+    /* Compensação Ótica: 
+       Se o seu header tem 80px de altura, subimos o texto em 40px 
+       para que ele pareça centralizado em relação à área ÚTIL da tela. */
+    margin-top: -40px;
+}
+
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 2s;
+    /* Aparece por último no delay */
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    51% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
 }
 
 .hero h1 {
@@ -111,7 +212,8 @@ body {
     font-size: 34px;
     line-height: 1.2;
     color: var(--dark);
-    margin: 10px 0;
+    margin: 15px 0;
+    width: 100%;
 }
 
 .hero h1 i {
@@ -414,7 +516,7 @@ body {
     .category-card:hover {
         border-color: var(--gold);
         transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
     }
 
     /* Efeito de Hover nas Imagens */
@@ -425,15 +527,18 @@ body {
     .category-card::after {
         content: '';
         position: absolute;
-        bottom: 0; left: 50%;
-        width: 0; height: 2px;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
         background: var(--gold);
         transition: 0.4s;
         transform: translateX(-50%);
     }
 
     category-card:hover::after {
-        width: 30%; /* A linha cresce a partir do centro */
+        width: 30%;
+        /* A linha cresce a partir do centro */
     }
 
     /* Overlay que aparece no hover */
@@ -552,13 +657,16 @@ body {
 .tab-btn.active::before {
     content: '';
     position: absolute;
-    left: 0; top: 0;
-    width: 4px; height: 100%;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
     background: var(--gold);
 }
 
 .map-container {
-    filter: grayscale(0.2); /* Deixa o mapa mais sóbrio, combinando com o design */
+    filter: grayscale(0.2);
+    /* Deixa o mapa mais sóbrio, combinando com o design */
     border: 1px solid var(--border);
 }
 
@@ -566,7 +674,7 @@ body {
 .tab-actions {
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .action-link {
@@ -589,7 +697,8 @@ body {
 
 @media (min-width: 992px) {
     .location-wrapper {
-        grid-template-columns: 350px 1fr; /* Botões à esquerda, mapa à direita */
+        grid-template-columns: 350px 1fr;
+        /* Botões à esquerda, mapa à direita */
     }
 }
 
@@ -623,12 +732,15 @@ body {
 }
 
 @media (min-width: 992px) {
-    .mantra-text { font-size: 46px; }
+    .mantra-text {
+        font-size: 46px;
+    }
 }
 
 /* --- SEÇÃO WHATSAPP --- */
 .cta-box {
-    background: var(--soft-pink); /* Aquele rosa bem clarinho que usamos */
+    background: var(--soft-pink);
+    /* Aquele rosa bem clarinho que usamos */
     padding: 60px 30px;
     text-align: center;
     border: 1px solid rgba(197, 160, 89, 0.1);
@@ -664,9 +776,10 @@ body {
     color: #fff;
     text-decoration: none;
     padding: 20px 40px;
-    border-radius: 0; /* Quadrado é mais moderno/luxo */
+    border-radius: 0;
+    /* Quadrado é mais moderno/luxo */
     transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn-text {
@@ -753,7 +866,8 @@ body {
     letter-spacing: 2px;
 }
 
-.footer-nav h4, .footer-credits h4 {
+.footer-nav h4,
+.footer-credits h4 {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -761,15 +875,32 @@ body {
     margin-bottom: 25px;
 }
 
-.footer-nav ul { list-style: none; padding: 0; }
-.footer-nav li { margin-bottom: 12px; }
-.footer-nav a { text-decoration: none; color: var(--dark); font-size: 13px; transition: 0.3s; }
-.footer-nav a:hover { color: var(--gold); }
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 12px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--gold);
+}
 
 /* ASSINATURA KOORVO */
 .koorvo-logo {
-    height: 15px; /* Tamanho discreto para não roubar a cena */
-    filter: grayscale(1); /* Deixa a logo P&B para combinar com o luxo */
+    height: 15px;
+    /* Tamanho discreto para não roubar a cena */
+    filter: grayscale(1);
+    /* Deixa a logo P&B para combinar com o luxo */
     transition: 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
     opacity: 0.7;
 }
@@ -788,16 +919,24 @@ body {
 
 /* --- VERSÃO DESKTOP --- */
 @media (min-width: 992px) {
-    .main-footer { text-align: left; }
-    
+    .main-footer {
+        text-align: left;
+    }
+
     .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr; /* Marca ganha mais espaço na esquerda */
+        grid-template-columns: 2fr 1fr 1fr;
+        /* Marca ganha mais espaço na esquerda */
         align-items: flex-start;
     }
 
-    .footer-brand p { margin: 0 0 20px 0; }
-    .footer-social { justify-content: flex-start; }
-    
+    .footer-brand p {
+        margin: 0 0 20px 0;
+    }
+
+    .footer-social {
+        justify-content: flex-start;
+    }
+
     .footer-credits {
         text-align: right;
     }
