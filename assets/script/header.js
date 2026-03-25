@@ -3,6 +3,7 @@ const drawer = document.getElementById('drawer');
 const overlay = document.getElementById('overlay');
 const links = document.querySelectorAll('.menu-drawer a');
 
+
 const toggleMenu = () => {
     drawer.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -12,9 +13,11 @@ const toggleMenu = () => {
     document.body.style.overflow = isActive ? 'hidden' : 'auto';
 };
 
-openBtn.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
+export default function Header() {
+    openBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
 
-links.forEach(link => {
-    link.addEventListener('click', toggleMenu);
-});
+    links.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+}

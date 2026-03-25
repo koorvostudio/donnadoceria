@@ -14,8 +14,10 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.1 // O card precisa estar 10% visível para animar
 });
 
-reveals.forEach((el, index) => {
-    // Define um atributo data-delay com o índice do card
-    el.dataset.delay = index;
-    observer.observe(el);
-});
+export default function Reveal() {
+    reveals.forEach((el, index) => {
+        // Define um atributo data-delay com o índice do card
+        el.dataset.delay = index;
+        observer.observe(el);
+    });
+}
