@@ -162,10 +162,12 @@ img {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Espaçamento entre as barras */
+    gap: 8px;
+    /* Espaçamento entre as barras */
     padding: 10px;
     z-index: 1100;
-    align-items: flex-start; /* Garante que o alinhamento comece à esquerda */
+    align-items: flex-start;
+    /* Garante que o alinhamento comece à esquerda */
 }
 
 .menu-toggle span {
@@ -196,7 +198,8 @@ img {
 
 /* Barra Inferior: Sobe, rotaciona e assume tamanho total */
 .menu-toggle.active span:nth-child(3) {
-    width: 25px; /* Tamanho total para simetria */
+    width: 25px;
+    /* Tamanho total para simetria */
     transform: translateY(-9px) rotate(-45deg);
 }
 
@@ -454,6 +457,11 @@ img {
 
 .menu-drawer.active {
     right: 0;
+}
+
+.menu-drawer a {
+    font-family: var(--font-serif);
+    font-style: italic;
 }
 
 .menu-overlay {
