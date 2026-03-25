@@ -40,4 +40,4 @@ Este é o projeto de presença digital da **Donna Doceria**, uma doceria sofisti
 
 ## ✒️ Créditos
 
-Este projeto foi planejado e desenvolvido pela **Koorvo | Simples. Sólido. Inteligente.**.
+Este projeto foi planejado e desenvolvido pela **Koorvo | Simples. Sólido. Inteligente.**
