@@ -1109,7 +1109,19 @@ body {
     align-items: center;
     text-decoration: none;
     z-index: 9999;
-    /* SEM OVERFLOW: HIDDEN AQUI */
+    transform: translateY(150px) scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        transform 0.5s ease,
+        opacity 0.4s ease;
+    will-change: transform, opacity;
+}
+
+.whatsapp-float.show {
+    transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .whatsapp-icon-box {
