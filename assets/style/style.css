@@ -221,8 +221,7 @@ body {
 
 /* --- ESTILIZAÇÃO DA HERO --- */
 .hero {
-    height: 100vh;
-    height: 100svh;
+    min-height: calc(100svh - 90px);
     /* Unidade moderna para mobile */
     /* O Segredo da Centralização */
     display: flex;
@@ -237,9 +236,9 @@ body {
     position: relative;
     overflow: hidden;
 
-    /* Reset total de espaçamentos */
-    padding: 0;
-    margin: 0;
+    padding: 60px 0;
+    text-align: center;
+    background: var(--color-soft-pink);
 }
 
 .background-pattern>* {
@@ -410,13 +409,6 @@ body {
     .hero h1 {
         font-size: 72px;
     }
-}
-
-/* --- HERO MOBILE --- */
-.hero {
-    padding: 60px 0;
-    text-align: center;
-    background: var(--color-soft-pink);
 }
 
 .hero h1 {
