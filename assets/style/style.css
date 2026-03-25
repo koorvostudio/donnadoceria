@@ -90,11 +90,14 @@ body {
 /* --- NAVBAR MOBILE (PADRÃO) --- */
 .navbar {
     padding: 15px 0;
-    border-bottom: 1px solid #eee;
-    background: #fff;
+
     position: sticky;
     top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(5px);
     z-index: 100;
+    border-bottom: 1px solid var(--border);
 }
 
 .flex-nav {
@@ -106,16 +109,19 @@ body {
 .brand .logo-wrapper {
     position: relative;
     display: block;
-    width: 180px; /* Ajuste conforme o tamanho real da sua logo */
-    height: 60px; /* Ajuste conforme o tamanho real da sua logo */
+    width: 180px;
+    /* Ajuste conforme o tamanho real da sua logo */
+    height: 60px;
+    /* Ajuste conforme o tamanho real da sua logo */
 }
 
 .brand img {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(-50%); /* Garante centralização vertical perfeita */
-    width: 100%;
+    transform: translateY(-50%);
+    /* Garante centralização vertical perfeita */
+    width: 80%;
     height: auto;
     transition: all 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
 }
@@ -143,15 +149,19 @@ body {
     display: none;
 }
 
+
+
 /* Esconde no mobile */
 
 .menu-toggle {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Espaço elegante entre as linhas */
+    gap: 8px;
+    /* Espaço elegante entre as linhas */
     padding: 10px;
-    z-index: 1100; /* Garante que fique acima do drawer se necessário */
+    z-index: 1100;
+    /* Garante que fique acima do drawer se necessário */
 
 }
 
@@ -178,6 +188,35 @@ body {
     color: var(--color-dark);
     text-decoration: none;
     letter-spacing: 1px;
+}
+
+/* Container da Barra */
+.progress-container {
+    width: 100%;
+    height: 1px;
+    /* Espessura sutil para manter o luxo */
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+/* A Barra de Cor */
+.progress-bar {
+    height: 100%;
+    background-color: var(--color-gold);
+    /* Sua cor rosa */
+    width: 0%;
+    /* Começa zerada */
+    transition: width 0.1s ease-out;
+    /* Suaviza o movimento do preenchimento */
+}
+
+@media (min-width: 992px) {
+    .brand img {
+        width: 100%;
+    }
 }
 
 /* --- ESTILIZAÇÃO DA HERO --- */
@@ -241,7 +280,8 @@ body {
     margin-top: -40px;
 }
 
-.hero-content i, .hero-content span {
+.hero-content i,
+.hero-content span {
     color: var(--color-pink);
 }
 
@@ -510,10 +550,10 @@ body {
 
     .btn-nav:hover {
         background-color: var(--color-gold);
-        color: #fff !important; 
+        color: #fff !important;
     }
 
-    
+
 
     .hero {
         padding: 120px 0;
@@ -1081,27 +1121,31 @@ body {
 }
 
 .whatsapp-icon-box {
-    width: 50px; /* Aumentamos um pouco a bolha dourada */
+    width: 50px;
+    /* Aumentamos um pouco a bolha dourada */
     height: 50px;
     background-color: var(--color-pink);
     color: #FFF;
     border-radius: 50%;
-    
+
     /* Centralização Total e Segura */
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     z-index: 2;
-    overflow: visible; /* Garante que o desenho não seja cortado por erro */
+    overflow: visible;
+    /* Garante que o desenho não seja cortado por erro */
 }
 
 .whatsapp-svg {
-    width: 32px; /* Tamanho do ícone dentro da bolha */
+    width: 32px;
+    /* Tamanho do ícone dentro da bolha */
     height: 32px;
-    display: block; /* Essencial para centralização Flexbox */
+    display: block;
+    /* Essencial para centralização Flexbox */
 }
 
 .whatsapp-text {
@@ -1111,11 +1155,13 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 12px 25px;
-    border-radius: 30px 0 0 30px; /* Arredondado apenas na esquerda */
-    margin-right: -25px; /* Sobrepõe levemente para o encaixe perfeito */
+    border-radius: 30px 0 0 30px;
+    /* Arredondado apenas na esquerda */
+    margin-right: -25px;
+    /* Sobrepõe levemente para o encaixe perfeito */
     padding-right: 40px;
     display: none;
-    
+
     /* Estado Inicial: Escondido */
     opacity: 0;
     visibility: hidden;
@@ -1126,7 +1172,8 @@ body {
 /* --- EFEITO HOVER --- */
 
 .whatsapp-float:hover .whatsapp-icon-box {
-    background-color: var(--color-dark); /* Muda de cor no hover */
+    background-color: var(--color-dark);
+    /* Muda de cor no hover */
     color: var(--color-gold-secondary);
     transform: scale(1.05);
 }
@@ -1142,20 +1189,24 @@ body {
    então deixamos apenas o botão ou reduzimos o texto */
 @media (min-width: 992px) {
     .whatsapp-text {
-        display: block; /* Esconde o texto em telas pequenas para não cobrir o site */
+        display: block;
+        /* Esconde o texto em telas pequenas para não cobrir o site */
     }
+
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
     }
 
     .whatsapp-icon-box {
-        width: 60px; /* Tamanho do ícone dentro da bolha */
+        width: 60px;
+        /* Tamanho do ícone dentro da bolha */
         height: 60px;
     }
 
-    .whatsapp-svg { 
-        width: 42px; /* Tamanho do ícone dentro da bolha */
+    .whatsapp-svg {
+        width: 42px;
+        /* Tamanho do ícone dentro da bolha */
         height: 42px;
     }
 }
