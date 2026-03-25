@@ -1,4 +1,4 @@
-# 🍯 Donna Doceria | Alta Confeitaria
+# 🌸 Donna Doceria | A mais florida de brasília
 
 Este é o projeto de presença digital da **Donna Doceria**, uma doceria sofisticada baseada em Brasília. O site foi desenvolvido com foco na experiência do usuário, estética de luxo e performance otimizada através de uma abordagem **Mobile First**.
 
