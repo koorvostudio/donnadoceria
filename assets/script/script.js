@@ -1,5 +1,5 @@
 import { FloatingWhatsAppButton, ShowOnApproachWhatsAppButton, ShowOrHideWhatsAppButton } from "./floating-button.js";
-import Header from "./header.js";
+import Header, { RedefineMenu } from "./header.js";
 import ChangeMap from "./map.js";
 import ProgressBar from "./progress-bar.js";
 import Reveal from "./reveal.js";
@@ -17,4 +17,8 @@ window.addEventListener("scroll", () => {
 
 document.addEventListener('mousemove', (e) => {
     ShowOnApproachWhatsAppButton(e.clientX, e.clientY);
+});
+
+window.addEventListener("resize", () => {
+    RedefineMenu();
 });
