@@ -162,12 +162,10 @@ img {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    /* Espaço elegante entre as linhas */
+    gap: 8px; /* Espaçamento entre as barras */
     padding: 10px;
     z-index: 1100;
-    /* Garante que fique acima do drawer se necessário */
-
+    align-items: flex-start; /* Garante que o alinhamento comece à esquerda */
 }
 
 .menu-toggle span {
@@ -177,22 +175,29 @@ img {
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animação para transformar em X */
+/* 3ª barra com metade do tamanho */
+.menu-toggle span:nth-child(3) {
+    width: 12.5px;
+}
+
+/* --- Estado Ativo (Transformação em X) --- */
+
+/* Barra Superior: Desce e rotaciona */
 .menu-toggle.active span:nth-child(1) {
-    transform: translateY(4.5px) rotate(45deg);
+    /* O valor de 9px depende do gap (8px) + altura da barra (1px) */
+    transform: translateY(9px) rotate(45deg);
 }
 
+/* Barra do Meio: Fica invisível e encolhe */
 .menu-toggle.active span:nth-child(2) {
-    transform: translateY(-4.5px) rotate(-45deg);
+    opacity: 0;
+    transform: translateX(-10px);
 }
 
-.menu-drawer a {
-    font-family: var(--font-serif);
-    font-size: 24px;
-    font-style: italic;
-    color: var(--color-dark);
-    text-decoration: none;
-    letter-spacing: 1px;
+/* Barra Inferior: Sobe, rotaciona e assume tamanho total */
+.menu-toggle.active span:nth-child(3) {
+    width: 25px; /* Tamanho total para simetria */
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 /* Container da Barra */
