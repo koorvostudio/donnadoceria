@@ -15,7 +15,7 @@ const toggleMenu = () => {
 
 export default function Header() {
     openBtn.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', e => e.target.classList.contains("menu-overlay") && toggleMenu());
 
     links.forEach(link => {
         link.addEventListener('click', toggleMenu);

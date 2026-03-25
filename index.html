@@ -13,27 +13,8 @@
 </head>
 
 <body>
-
-    <div class="menu-overlay" id="overlay"></div>
-
-    <aside class="menu-drawer" id="drawer">
-        <div class="drawer-header">
-            <span class="close-menu" id="close-btn"></span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#donna">A Donna</a></li>
-                <li><a href="#vitrine">Vitrine</a></li>
-                <li><a href="#unidades">Nossas Unidades</a></li>
-                <li><a href="#contato">Encomendar</a></li>
-            </ul>
-        </nav>
-    </aside>
-
-    <div class="menu-overlay" id="overlay"></div>
-
     <header class="navbar">
-        <div class="container flex-nav">
+        <nav class="container flex-nav">
 
             <div class="progress-container">
                 <div class="progress-bar" id="scrollBar"></div>
@@ -46,18 +27,22 @@
                 </a>
             </div>
 
-            <ul class="menu-desktop">
-                <li><a href="#donna">A Donna</a></li>
-                <li><a href="#vitrine">Vitrine</a></li>
-                <li><a href="#unidades">Nossas Unidades</a></li>
-                <li><a href="#contato" class="btn-nav">Encomendar</a></li>
-            </ul>
+            <div class="menu-overlay" id="overlay">
+                <div class="menu-drawer" id="drawer">
+                    <ul class="menu">
+                        <li><a href="#donna">A Donna</a></li>
+                        <li><a href="#vitrine">Vitrine</a></li>
+                        <li><a href="#unidades">Nossas Unidades</a></li>
+                        <li><a href="#contato" class="btn-nav">Encomendar</a></li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="menu-toggle" id="open-btn">
                 <span></span>
                 <span></span>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main>
