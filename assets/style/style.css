@@ -629,6 +629,8 @@ img {
     /* Aumentamos o GAP vertical no mobile para 80px para dar respiro total */
     gap: 80px;
     padding: 20px 0;
+    max-width: 480px;
+    margin: 0 auto;
 }
 
 .category-card {
@@ -708,6 +710,7 @@ img {
         grid-template-columns: repeat(3, 1fr);
         /* No desktop, o gap lateral é de 40px para separação clara */
         gap: 40px;
+        max-width: none;
     }
 
     .section-header h2 {
@@ -824,6 +827,9 @@ img {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
 }
 
 .tab-btn {
@@ -897,6 +903,10 @@ img {
 }
 
 @media (min-width: 992px) {
+    .location-tabs {
+        max-width: none;
+    }
+
     .location-wrapper {
         grid-template-columns: 350px 1fr;
         /* Botões à esquerda, mapa à direita */
@@ -907,6 +917,7 @@ img {
 .mantra-section {
     background: #fff;
     text-align: center;
+    padding: 100px 0;
 }
 
 .mantra-text {
@@ -932,6 +943,10 @@ img {
 }
 
 @media (min-width: 992px) {
+    .mantra-section {
+        padding: 120px 0;
+    }
+
     .mantra-text {
         font-size: 46px;
     }
