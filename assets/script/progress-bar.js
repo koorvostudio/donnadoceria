@@ -1,5 +1,8 @@
 const scrollBar = document.getElementById('scrollBar');
 
+/**
+ * Função que manipula a barra de progresso do header conforme a rolagem da página
+ */
 export default function ProgressBar() {
     // Quanto o usuário já desceu
     const windowScroll = document.documentElement.scrollTop;

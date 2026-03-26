@@ -14,6 +14,9 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.1 // O card precisa estar 10% visível para animar
 });
 
+/**
+ * Função para aplicar o efeito de scroll-reveal nos elementos da página
+ */
 export default function Reveal() {
     reveals.forEach((el, index) => {
         // Define um atributo data-delay com o índice do card

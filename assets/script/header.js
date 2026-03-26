@@ -3,7 +3,9 @@ const drawer = document.getElementById('drawer');
 const overlay = document.getElementById('overlay');
 const links = document.querySelectorAll('.menu-drawer a');
 
-
+/**
+ * Ação para a abertura e fechamento do menu mobile
+ */
 const toggleMenu = () => {
     if (window.innerWidth <= 992) {
         drawer.classList.toggle('active');
@@ -15,6 +17,9 @@ const toggleMenu = () => {
     }
 };
 
+/**
+ * Redefine o menu mobile ao seu estado inicial
+ */
 export const RedefineMenu = () => {
     if (window.innerWidth > 992) {
         drawer.classList.remove('active');
@@ -25,6 +30,9 @@ export const RedefineMenu = () => {
     }
 };
 
+/**
+ * Função que manipula a abertura e fechamento do menu mobile
+ */
 export default function Header() {
     openBtn.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', e => e.target.classList.contains("menu-overlay") && toggleMenu());

@@ -1,6 +1,9 @@
 const mapElement = document.getElementById('google-map');
 const buttons = document.querySelectorAll('.tab-btn');
 
+/**
+ * Função para mudar o emdereço no mapa
+ */
 export default function ChangeMap() {
     buttons.forEach((element, i, arr) => {
         element.addEventListener("click", () => {
