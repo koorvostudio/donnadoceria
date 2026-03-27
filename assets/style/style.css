@@ -13,8 +13,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-pink) var(--color-soft-pink-footer);
 }
 
 /* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM (SCROLLBAR) --- */
@@ -26,13 +24,13 @@
 
 /* Para Chrome, Safari e Edge */
 ::-webkit-scrollbar {
-    width: 6px;
     /* Bem fininha para não poluir */
+    width: 6px;
 }
 
 /* O fundo da barra (onde ela corre) */
 ::-webkit-scrollbar-track {
-    background: #fff;
+    background: var(--color-soft-pink-footer);
 }
 
 /* O "pegador" da barra (a parte que desce) */
@@ -45,8 +43,8 @@
 
 /* Quando o usuário passa o mouse na barra */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-gold);
     /* Ela ganha o toque dourado da marca */
+    background: #d33c5d;
 }
 
 
@@ -631,6 +629,7 @@ img {
     padding: 20px 0;
     max-width: 480px;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .category-card {
@@ -748,12 +747,13 @@ img {
     /* Overlay que aparece no hover */
     .card-overlay {
         position: absolute;
+        cursor: pointer;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        /* Fundo branco translúcido, mais "limpo" que o preto */
+        /* Fundo rose translúcido */
+        background: rgb(253, 250, 248, 0.90);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -768,9 +768,10 @@ img {
 
     .card-overlay span {
         font-family: var(--font-serif);
-        font-size: 14px;
+        font-size: 25px;
+        font-weight: 400;
         font-style: italic;
-        color: var(--color-dark);
+        color: var(--color-pink);
         text-transform: none;
         /* Mantém a elegância da serifa italic */
         letter-spacing: 1px;
