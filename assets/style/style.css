@@ -960,6 +960,25 @@ img {
 }
 
 /* --- SEÇÃO WHATSAPP --- */
+
+.contact {
+    position: relative;
+}
+
+.contact::before {
+    background-image: url("/assets/images/doces.svg");
+    background-size: cover;
+    background-position: center;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+}
+
+
 .cta-box {
     background: var(--color-soft-pink);
     /* Aquele rosa bem clarinho que usamos */
