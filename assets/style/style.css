@@ -345,7 +345,7 @@ img {
 
 .hero h1 {
     font-family: var(--font-serif);
-    font-size: 34px;
+    font-size: 2.1rem;
     line-height: 1.2;
     color: var(--color-dark);
     margin: 15px 0;
@@ -418,13 +418,13 @@ img {
     }
 
     .hero h1 {
-        font-size: 72px;
+        font-size: 4.5rem;
     }
 }
 
 .hero h1 {
     font-family: var(--font-serif);
-    font-size: 32px;
+    font-size: 2rem;
     margin: 20px 0;
 }
 
@@ -493,7 +493,7 @@ img {
 .menu a {
     text-decoration: none;
     color: var(--color-dark);
-    font-size: 18px;
+    font-size: 1.12rem;
     text-transform: uppercase;
 }
 
@@ -549,7 +549,7 @@ img {
     .menu a:not(.btn-nav) {
         text-decoration: none;
         color: var(--color-dark);
-        font-size: 11px;
+        font-size: 0.68rem;
         text-transform: uppercase;
         letter-spacing: 2px;
         transition: all 0.2s ease;
@@ -579,7 +579,7 @@ img {
         font-weight: 600;
         color: var(--color-gold) !important;
         text-decoration: none;
-        font-size: 11px !important;
+        font-size: 0.68rem !important;
         text-transform: uppercase;
         letter-spacing: 2px !important;
         transition: all 0.2s ease;
@@ -597,7 +597,7 @@ img {
     }
 
     .hero h1 {
-        font-size: 64px;
+        font-size: 4rem;
     }
 }
 
@@ -616,7 +616,7 @@ img {
 
 .section-header h2 {
     font-family: var(--font-serif);
-    font-size: 32px;
+    font-size: 2rem;
     margin: 10px 0;
 }
 
@@ -681,19 +681,19 @@ img {
 
 .card-info h3 {
     font-family: var(--font-serif);
-    font-size: 22px;
+    font-size: 1.37rem;
     margin-bottom: 10px;
 }
 
 .card-info p {
-    font-size: 14px;
+    font-size: 0.87rem;
     color: #666;
     line-height: 1.6;
 }
 
 .card-number {
     display: block;
-    font-size: 10px;
+    font-size: 0.62rem;
     letter-spacing: 3px;
     color: var(--color-gold);
     margin-bottom: 5px;
@@ -713,7 +713,7 @@ img {
     }
 
     .section-header h2 {
-        font-size: 48px;
+        font-size: 3rem;
     }
 
     .category-card:hover {
@@ -768,7 +768,7 @@ img {
 
     .card-overlay span {
         font-family: var(--font-serif);
-        font-size: 25px;
+        font-size: 1.56rem;
         font-weight: 400;
         font-style: italic;
         color: var(--color-pink);
@@ -837,6 +837,7 @@ img {
     background: #fff;
     border: 1px solid var(--border);
     padding: 25px;
+    font-size: 0.9rem;
     text-align: left;
     cursor: pointer;
     transition: 0.4s;
@@ -851,12 +852,12 @@ img {
 
 .tab-btn h3 {
     font-family: var(--font-serif);
-    font-size: 18px;
+    font-size: 1.12rem;
     margin: 5px 0;
 }
 
 .tab-btn span {
-    font-size: 10px;
+    font-size: 0.62rem;
     color: var(--color-gold);
     letter-spacing: 2px;
 }
@@ -873,9 +874,13 @@ img {
 }
 
 .map-container {
-    filter: grayscale(0.2);
-    /* Deixa o mapa mais sóbrio, combinando com o design */
-    border: 1px solid var(--border);
+    width: 100%;
+    height: 450px; 
+    border: 2px solid var(--color-gold);
+    border-radius: 8px;
+    overflow: hidden;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.05));
+    margin-top: 2rem;
 }
 
 /* --- AJUSTE NAS ABAS --- */
@@ -886,7 +891,7 @@ img {
 }
 
 .action-link {
-    font-size: 10px;
+    font-size: 0.62rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--color-gold);
@@ -923,7 +928,7 @@ img {
 
 .mantra-text {
     font-family: var(--font-serif);
-    font-size: 28px;
+    font-size: 1.75rem;
     color: var(--color-dark);
     line-height: 1.4;
     margin: 0 auto;
@@ -937,7 +942,7 @@ img {
 .mantra-signature {
     display: block;
     margin-top: 30px;
-    font-size: 11px;
+    font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: var(--color-gold);
@@ -949,7 +954,7 @@ img {
     }
 
     .mantra-text {
-        font-size: 46px;
+        font-size: 2.87rem;
     }
 }
 
@@ -971,14 +976,14 @@ img {
 
 .cta-content h2 {
     font-family: var(--font-serif);
-    font-size: 30px;
+    font-size: 1.87rem;
     line-height: 1.2;
     margin: 20px 0;
     color: var(--color-dark);
 }
 
 .cta-content p {
-    font-size: 15px;
+    font-size: 0.93rem;
     color: #666;
     max-width: 500px;
     margin: 0 auto 40px;
@@ -1005,14 +1010,14 @@ img {
 }
 
 .btn-text {
-    font-size: 12px;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
 }
 
 .btn-sub {
-    font-size: 10px;
+    font-size: 0.62rem;
     opacity: 0.6;
     margin-top: 5px;
     font-weight: 400;
@@ -1031,7 +1036,7 @@ img {
     }
 
     .cta-content h2 {
-        font-size: 52px;
+        font-size: 3.25rem;
     }
 
     /* Decoração sutil no fundo */
@@ -1073,7 +1078,7 @@ img {
 }
 
 .footer-brand p {
-    font-size: 13px;
+    font-size: 0.81rem;
     color: #888;
     max-width: 250px;
     margin: 0 auto 20px;
@@ -1088,7 +1093,7 @@ img {
 .footer-social a {
     text-decoration: none;
     color: #888;
-    font-size: 11px;
+    font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: color 0.3s ease;
@@ -1100,7 +1105,7 @@ img {
 
 .footer-nav h4,
 .footer-credits h4 {
-    font-size: 10px;
+    font-size: 0.62rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--color-gold);
@@ -1119,7 +1124,7 @@ img {
 .footer-nav a {
     text-decoration: none;
     color: var(--color-dark);
-    font-size: 13px;
+    font-size: 0.81rem;
     transition: 0.3s;
 }
 
@@ -1144,7 +1149,7 @@ img {
 }
 
 .copyright {
-    font-size: 11px;
+    font-size: 0.68rem;
     color: #bbb;
     margin-top: 30px;
 }
@@ -1229,7 +1234,7 @@ img {
 .whatsapp-text {
     background-color: var(--color-dark);
     color: #fff;
-    font-size: 11px;
+    font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 12px 25px;
