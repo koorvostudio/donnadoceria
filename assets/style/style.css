@@ -295,6 +295,10 @@ img {
     color: var(--color-pink);
 }
 
+.hero-content p {
+    margin-bottom: 50px;
+}
+
 
 .scroll-indicator {
     position: absolute;
@@ -370,10 +374,6 @@ img {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
-}
-
-.reveal-4 {
-    margin-bottom: 40px;
 }
 
 /* Keyframes da animação */
