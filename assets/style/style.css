@@ -491,6 +491,7 @@ img {
 }
 
 .menu a {
+    display: block;
     text-decoration: none;
     color: var(--color-dark);
     font-size: 1.12rem;
@@ -1292,4 +1293,12 @@ img {
         /* Tamanho do ícone dentro da bolha */
         height: 42px;
     }
+}
+
+@media (min-width: 768px) {
+        .whatsapp-float {
+        bottom: 30px;
+        right: 30px;
+    }
+
 }
