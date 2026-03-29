@@ -1094,7 +1094,7 @@ img {
 }
 
 .footer-logo {
-    height: 70px;
+    height: 75px;
     margin-bottom: 20px;
 }
 
@@ -1124,9 +1124,10 @@ img {
     color: var(--color-dark);
 }
 
-.footer-nav h4,
-.footer-credits h4 {
-    font-size: 0.62rem;
+.footer-nav span,
+.footer-credits span {
+    display: block;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--color-gold);
