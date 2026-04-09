@@ -403,6 +403,18 @@ img {
 
 /* --- LÓGICA DO REVEAL (O DELAY) --- */
 
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.6, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 /* Estado inicial: invisível e um pouco abaixo */
 .reveal-1,
 .reveal-2,
@@ -671,6 +683,11 @@ img {
     margin-bottom: 50px;
 }
 
+/* Efeito cascata EXCLUSIVO para os cards da vitrine */
+.grid-luxury .category-card:nth-child(1) { transition-delay: 0.1s; }
+.grid-luxury .category-card:nth-child(2) { transition-delay: 0.3s; }
+.grid-luxury .category-card:nth-child(3) { transition-delay: 0.5s; }
+
 .category-card {
     display: flex;
     flex-direction: column;
@@ -846,6 +863,15 @@ img {
         transition: 0.8s cubic-bezier(0.2, 0.6, 0.3, 1);
         transition-property: opacity, transform;
     }
+
+    /* O primeiro card não tem delay */
+    .category-card.reveal:nth-child(1) { transition-delay: 0.0s; }
+
+    /* O segundo card espera 0.2s */
+    .category-card.reveal:nth-child(2) { transition-delay: 0.2s; }
+
+    /* O terceiro card espera 0.4s */
+    .category-card.reveal:nth-child(3) { transition-delay: 0.4s; }
 
     /* Estado final quando visível */
     .category-card.reveal.active {

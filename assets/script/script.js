@@ -6,9 +6,9 @@ import ProgressBar, { CalculateScrollHeight } from "./progress-bar.js";
 import Reveal from "./reveal.js";
 
 // --- 1. INICIALIZAÇÃO BASE ---
+Reveal();
 Header();
 ChangeMap();
-Reveal();
 ProgressBar();
 FloatingWhatsAppButton();
 

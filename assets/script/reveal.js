@@ -1,26 +1,18 @@
-const reveals = document.querySelectorAll('.reveal');
-
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            // Adiciona um delay dinâmico para o efeito de cascata
-            const delay = entry.target.dataset.delay || 0;
-            setTimeout(() => {
-                entry.target.classList.add('active');
-            }, delay * 200); // 200ms de delay entre cada card
+            entry.target.classList.add('active');
+            obs.unobserve(entry.target); // Para de observar após aparecer (Salva bateria!)
         }
     });
 }, {
-    threshold: 0.1 // O card precisa estar 10% visível para animar
+    threshold: 0, 
+    rootMargin: "0px 0px -20px 0px"
 });
 
-/**
- * Função para aplicar o efeito de scroll-reveal nos elementos da página
- */
 export default function Reveal() {
-    reveals.forEach((el, index) => {
-        // Define um atributo data-delay com o índice do card
-        el.dataset.delay = index;
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach((el) => {
         observer.observe(el);
     });
 }
