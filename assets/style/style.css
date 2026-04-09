@@ -6,6 +6,7 @@
     src: url("/assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf") format("truetype-variations");
     font-weight: 100 900;
     font-style: normal;
+    font-display: swap; 
 }
 
 @font-face {
@@ -13,6 +14,7 @@
     src: url("/assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf") format("truetype-variations");
     font-weight: 100 900;
     font-style: italic;
+    font-display: swap;
 }
 
 /* Playfair Display */
@@ -21,6 +23,7 @@
     src: url("/assets/fonts/playfair-display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype-variations");
     font-weight: 400 900;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -28,6 +31,7 @@
     src: url("/assets/fonts/playfair-display/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype-variations");
     font-weight: 400 900;
     font-style: italic;
+    font-display: swap;
 }
 
 :root {
@@ -405,8 +409,8 @@ img {
 .reveal-4,
 .reveal-5 {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+    transform: translateY(10px);
+    animation: fadeUp 0.6s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
 }
 
 /* Keyframes da animação */
@@ -419,27 +423,27 @@ img {
 
 /* Delays Estratégicos (Efeito Cascata) */
 .reveal-1 {
-    animation-delay: 0.3s;
+    animation-delay: 0.1s;
 }
 
 /* Subtitle */
 .reveal-2 {
-    animation-delay: 0.5s;
+    animation-delay: 0.15s;
 }
 
 /* Título Principal */
 .reveal-3 {
-    animation-delay: 0.7s;
+    animation-delay: 0.2s;
 }
 
 /* Divisor Dourado */
 .reveal-4 {
-    animation-delay: 0.9s;
+    animation-delay: 0.25s;
 }
 
 /* Texto de apoio */
 .reveal-5 {
-    animation-delay: 1.1s;
+    animation-delay: 0.3s;
 }
 
 /* Botão CTA */
