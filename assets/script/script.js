@@ -1,32 +1,8 @@
-// import { FloatingWhatsAppButton, ShowOnApproachWhatsAppButton, ShowOrHideWhatsAppButton } from "./floating-button.js";
-// import Header, { RedefineMenu } from "./header.js";
-// import ChangeMap from "./map.js";
-// import ProgressBar from "./progress-bar.js";
-// import Reveal from "./reveal.js";
-
-// Header();
-// ChangeMap();
-// Reveal();
-// ProgressBar();
-// FloatingWhatsAppButton();
-
-// window.addEventListener("scroll", () => {
-//     ProgressBar();
-//     ShowOrHideWhatsAppButton();
-// });
-
-// document.addEventListener('mousemove', (e) => {
-//     ShowOnApproachWhatsAppButton(e.clientX, e.clientY);
-// });
-
-// window.addEventListener("resize", () => {
-//     RedefineMenu();
-// });
-
 import { FloatingWhatsAppButton, ShowOnApproachWhatsAppButton, ShowOrHideWhatsAppButton } from "./floating-button.js";
 import Header, { RedefineMenu } from "./header.js";
 import ChangeMap from "./map.js";
-import ProgressBar from "./progress-bar.js";
+// V MUDANÇA AQUI: Importamos a CalculateScrollHeight junto com o ProgressBar
+import ProgressBar, { CalculateScrollHeight } from "./progress-bar.js"; 
 import Reveal from "./reveal.js";
 
 // --- 1. INICIALIZAÇÃO BASE ---
@@ -77,5 +53,6 @@ window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
         RedefineMenu();
+        CalculateScrollHeight(); 
     }, 250); 
 });

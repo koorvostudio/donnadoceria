@@ -253,11 +253,12 @@ img {
 /* A Barra de Cor */
 .progress-bar {
     height: 100%;
-    background-color: var(--color-gold);
-    /* Sua cor rosa */
-    width: 0%;
-    /* Começa zerada */
+    background-color: var(--color-gold); /* Cor da Barra */
+    width: 100%; /* A barra já nasce com 100% do tamanho */
+    transform-origin: left; /* Garante que ela cresça da esquerda para a direita */
+    transform: scaleX(0); /* Começa esmagada (invisível) */
     transition: width 0.1s ease-out;
+    will-change: transform;
     /* Suaviza o movimento do preenchimento */
 }
 
