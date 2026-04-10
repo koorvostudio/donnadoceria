@@ -56,3 +56,13 @@ window.addEventListener("resize", () => {
         CalculateScrollHeight(); 
     }, 250); 
 });
+
+// --- 5. OTIMIZAÇÃO DO GOOGLE MAPS (Resolve o TBT) ---
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        const iframe = document.getElementById('google-map');
+        if (iframe) {
+            iframe.src = iframe.getAttribute('data-src');
+        }
+    }, 2500); 
+});
